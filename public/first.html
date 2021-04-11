@@ -27,6 +27,14 @@
         stage.addChild(circle);
         stage.update();
       
+        //before the listener
+        var clickedCircle = (function(){
+            this.x = this.x + 10;
+            stage.update();
+        }.bind(stage));
+
+        circle.addEventListener("click",clickedCircle);
+        
       }
     </script>
   </body>
